@@ -1,0 +1,12 @@
+# Build artifacts / dev-only files that should not be uploaded to Vercel
+node_modules
+.next
+.turbo
+.vercel
+.DS_Store
+*.log
+.env.local
+.env.*.local
+.vscode
+.idea
+README.md
