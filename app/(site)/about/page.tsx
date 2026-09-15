@@ -8,17 +8,16 @@ import { SectionRule } from "@/components/layout/SectionRule";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd, personJsonLd } from "@/lib/structured-data";
 
-const TOTAL_SECTIONS = 4;
+const TOTAL_SECTIONS = 3;
 
 export const metadata: Metadata = {
   title: "关于 · About",
   description:
-    "独立开发者，专注于为日常工具注入克制的美感与深思熟虑的交互。",
+    "产品经理，专注 AI 应用的产品化。主导内部 RAG 知识助手从 v0.1.0 到 v0.4.0；日常与 Claude Code 协作。",
 };
 
 export default async function AboutPage() {
   const locale = await getLocale();
-  const paragraphs = pickLocalized(locale, about.bio);
   const skillsLabel = t(locale, "about_skills");
   const timelineLabel = t(locale, "about_timeline");
 
@@ -44,31 +43,8 @@ export default async function AboutPage() {
         </div>
       </header>
 
-      {/* ── Section 02: Bio ──────────────────────────────────── */}
-      <SectionRule index={2} total={TOTAL_SECTIONS} label="BIO" />
-      <section>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-12 md:px-12 md:py-20">
-          <div className="md:col-span-3">
-            <Reveal>
-              <Label>BIO</Label>
-            </Reveal>
-          </div>
-          <div className="md:col-span-9">
-            <Reveal delay={80}>
-              <div className="space-y-8 font-serif text-2xl leading-relaxed md:text-3xl">
-                {paragraphs.map((p, i) => (
-                  <p key={i} className="text-wrap pretty">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 03: Skills ───────────────────────────────── */}
-      <SectionRule index={3} total={TOTAL_SECTIONS} label={skillsLabel} />
+      {/* ── Section 02: Skills ───────────────────────────────── */}
+      <SectionRule index={2} total={TOTAL_SECTIONS} label={skillsLabel} />
       <section>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-12 md:px-12 md:py-20">
           <div className="md:col-span-3">
@@ -95,8 +71,8 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* ── Section 04: Timeline ─────────────────────────────── */}
-      <SectionRule index={4} total={TOTAL_SECTIONS} label={timelineLabel} />
+      {/* ── Section 03: Timeline ─────────────────────────────── */}
+      <SectionRule index={3} total={TOTAL_SECTIONS} label={timelineLabel} />
       <section>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-12 md:px-12 md:py-20">
           <div className="md:col-span-3">

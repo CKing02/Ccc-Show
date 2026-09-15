@@ -1,7 +1,7 @@
 ---
 title:
-  zh: "健身 2.0"
-  en: "Fitness 2.0"
+  zh: "锻炼2点零"
+  en: "Workout 2.0"
 slug: fitness-2
 date: 2026-09-11
 platform:
@@ -20,67 +20,62 @@ gallery:
   - /projects/fitness-2/04.jpg
   - /projects/fitness-2/05.jpg
 summary:
-  zh: "为认真训练的人打造的极简健身记录 App，剥离一切多余功能。"
-  en: "A minimalist fitness tracker for serious lifters — nothing extra, only the work."
+  zh: "力量训练版的备忘录——纯本地、零社交、零广告，记录完就回到训练。"
+  en: "A notepad for strength training — pure local, zero social, zero ads. Log it and get back to the work."
 tech:
-  - Kotlin
-  - Jetpack Compose
-  - Room
-  - Health Connect
-links:
-  - type: github
-    url: "https://github.com/yourname/fitness-2"
+  - React Native
+  - Expo
+  - TypeScript
+  - Zustand
+  - expo-sqlite
+  - React Navigation
+  - Reanimated
 ---
 
 ## 设计动机
 
-大多数健身 App 把界面塞满排行榜、社交动态、广告位和推送通知——训练本身反而被淹没。
+市面上大多数健身 App 把界面塞满排行榜、社交动态、广告位、推送通知——训练本身反而被淹没。
 
-**健身 2.0** 只保留一件事：记录训练，然后让你回到训练。
+**锻炼2点零** 只保留一件事：把每组训练记下来，然后让你回到训练。所有数据存在本地，不登录、不联网、不社交。
+
+定位：**力量训练版的备忘录**。
 
 ## 核心特性
 
-### 一屏记录
+### 自定义训练计划
 
-打开 App，立刻看到上一组的重量和次数。改数字 → 下一组。**全程不用离开屏幕**。
+- 30+ 内置动作（按主要肌群 / 器械筛选，支持搜索）
+- 创建「推胸日」「下肢日」这类计划，添加动作即可
+- 自由训练模式（不关联计划，直接开练）
 
-### 离线优先
+### 训练中：逐组打钩 + 自动休息
 
-所有数据存在本地 Room 数据库。无需登录、无需联网、无需同步。
+- 完成一组 → 自动启动休息倒计时 → 到 0 震动提醒 → 进入下一组
+- 每组支持 W / D / F 标记（热身 / 递减 / 力竭）
+- 切后台、接电话再回来：计时器基于时间戳补偿，状态不丢
 
-> 你的训练数据只属于你。
+### 历史与日历
 
-### 渐进式记录
+- 历史列表按日期分组，点进去看每组数据（只读）
+- 过去 12 周训练热力图，一眼看出训练频率
 
-每个动作按 `重量 × 次数` 自动估算 1RM，生成渐进式负荷建议。
+### 纯本地
 
-| 动作 | 上次 | 建议下次 |
-| --- | --- | --- |
-| 深蹲 | 100kg × 5 | 102.5kg × 5 |
-| 卧推 | 70kg × 8 | 72.5kg × 6 |
-| 硬拉 | 120kg × 3 | 122.5kg × 3 |
+- `expo-sqlite` 持久化，杀进程重启数据保留
+- 设置：kg / lb、暗色 / 亮色 / 跟随系统、默认休息时间、震动反馈开关
 
 ## 技术架构
 
-\`\`\`kotlin
-@Entity
-data class WorkoutSet(
-    @PrimaryKey val id: Long,
-    val exerciseId: Long,
-    val weightKg: Float,
-    val reps: Int,
-    val rpe: Float?,        // Rate of Perceived Exertion 1-10
-    val performedAt: Instant,
-)
-\`\`\`
+- **React Native 0.86** + **Expo SDK 57** — 跨平台原生体验（当前仅 Android）
+- **TypeScript** — strict + path alias `@/*`
+- **Zustand** — 单一 store，按业务域切片：`exercise` / `plan` / `training` / `settings`
+- **expo-sqlite** — 本地 SQLite 持久化（动作库 / 计划 / 训练记录）
+- **React Navigation** — 3 Tab（首页 / 锻炼 / 我的）+ 全屏沉浸训练栈
+- **Reanimated** — 倒计时与微交互
+- **Lottie** — 训练完成动画
 
-- **Kotlin** + **Jetpack Compose** — 现代 Android 原生开发
-- **Room** — 本地 SQLite 持久化
-- **Health Connect** — 与系统健康数据互通
-- **Material 3** — 严格遵循 Material You 主题
+## 设计系统
 
-## 未来计划
-
-- [ ] 训练模板分享
-- [ ] Apple Watch 端
-- [ ] 静默后台同步到自托管服务器
+- 自研 Design Token：`colors` / `typography` / `spacing` / `radius` / `shadows`，light + dark 双套
+- 强调色：暖橙 `#FF6B35`，用于训练量数据高亮
+- 主题跟随系统色模式，App 内可手动覆盖

@@ -76,6 +76,8 @@ export function Lightbox({
     panX: number;
     panY: number;
   } | null>(null);
+  // 单独追踪本次按下→松开是否移动过；click 触发时读它来判断是"点击"还是"拖拽"
+  const movedRef = useRef(false);
 
   const showArrows = images.length > 1;
 
@@ -164,12 +166,17 @@ export function Lightbox({
       panX: pan.x,
       panY: pan.y,
     };
+    movedRef.current = false;
   }
 
   function handleMouseMove(e: React.MouseEvent) {
     if (!dragRef.current) return;
     const dx = e.clientX - dragRef.current.startX;
     const dy = e.clientY - dragRef.current.startY;
+    // 位移超过阈值才算拖拽，否则是点击
+    if (!movedRef.current && (Math.abs(dx) > 5 || Math.abs(dy) > 5)) {
+      movedRef.current = true;
+    }
     setPan({
       x: dragRef.current.panX + dx,
       y: dragRef.current.panY + dy,
@@ -180,8 +187,16 @@ export function Lightbox({
     dragRef.current = null;
   }
 
-  function handleBackdropClick(e: React.MouseEvent) {
-    if (e.target === e.currentTarget) onClose();
+  function handleClick(e: React.MouseEvent) {
+    // 点背景 → 关闭
+    if (e.target === e.currentTarget) {
+      onClose();
+      return;
+    }
+    // 单击图片（未拖拽）→ 关闭
+    if ((e.target as HTMLElement).tagName === "IMG" && !movedRef.current) {
+      onClose();
+    }
   }
 
   return (
@@ -192,7 +207,7 @@ export function Lightbox({
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      onClick={handleBackdropClick}
+      onClick={handleClick}
       className="fixed inset-0 z-50 overflow-hidden bg-black/90"
       role="dialog"
       aria-modal="true"

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Label } from "@/components/ui/Label";
 import { Reveal } from "@/components/ui/Reveal";
-import { t } from "@/lib/i18n";
+import { pickLocalized, t } from "@/lib/i18n";
+import { about } from "@/lib/about";
 import type { Locale } from "@/lib/types";
 
 interface AboutTeaserProps {
@@ -22,17 +23,19 @@ export function AboutTeaser({ locale }: AboutTeaserProps) {
             <p className="font-serif text-2xl leading-relaxed md:text-3xl">
               {locale === "en" ? (
                 <>
-                  Independent developer, focused on bringing restrained aesthetics and
-                  considered interaction to everyday tools.
+                  Product Manager focused on AI productization — currently shipping
+                  an internal RAG knowledge assistant (v0.1.0 → v0.4.0) with a
+                  feedback → BadCase → auto-Prompt-Patch loop.
                   <br />
-                  Good software should be like an exhibit — worth pausing for, worth a
-                  second look.
+                  {pickLocalized(locale, about.subtitle)}
                 </>
               ) : (
                 <>
-                  独立开发者，专注于为日常工具注入克制的美感与深思熟虑的交互。
+                  产品经理，专注 AI 应用的产品化——近期在主导内部 RAG 知识助手从
+                  v0.1.0 迭代到 v0.4.0，搭了「反馈 → BadCase →
+                  Prompt 补丁自动注入」的闭环。
                   <br />
-                  相信好的软件应该像一件展品——值得驻足，值得再看一遍。
+                  {pickLocalized(locale, about.subtitle)}
                 </>
               )}
             </p>

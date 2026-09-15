@@ -19,13 +19,6 @@ export function Hero({ locale }: HeroProps) {
         </h1>
       </Reveal>
       <Reveal delay={160}>
-        <p className="mt-12 max-w-2xl font-serif text-xl leading-relaxed text-ink-muted md:text-3xl">
-          {locale === "en"
-            ? "Browse 3–6 independently crafted works, the way you'd walk through a gallery."
-            : "像看展一样，逐件浏览 3-6 个独立完成的作品。"}
-        </p>
-      </Reveal>
-      <Reveal delay={240}>
         <div className="mt-16 flex flex-wrap gap-x-12 gap-y-4 border-t border-ink-faint pt-8 text-sm uppercase tracking-[0.2em]">
           {site.social.github && (
             <a

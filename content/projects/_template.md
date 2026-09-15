@@ -126,9 +126,3 @@ function example() {
 | --- | --- |
 | [TODO: 指标 1] | [TODO: 数值] |
 | [TODO: 指标 2] | [TODO: 数值] |
-
-## 未来计划
-
-- [ ] [TODO: 待办 1]
-- [ ] [TODO: 待办 2]
-- [x] [TODO: 已完成的（可选）]

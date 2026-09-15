@@ -5,6 +5,25 @@
 import type { Locale, ProjectMeta } from "./types";
 import { pickLocalized } from "./i18n";
 import { site } from "./site";
+import { about } from "./about";
+
+const jobTitle = {
+  zh: "产品经理 · AI 方向",
+  en: "Product Manager · AI",
+} as const;
+
+const knowsAbout = [
+  "Claude Code",
+  "Prompt Engineering",
+  "RAG",
+  "LLM Application Design",
+  "Agent Design",
+  "AI Product Evaluation",
+  "PRD",
+  "User Research",
+  "UML",
+  "Prototyping",
+];
 
 /**
  * 在服务端组件里渲染 JSON-LD。
@@ -42,10 +61,7 @@ export function websiteJsonLd(locale: Locale) {
         name: site.name,
         url: siteUrl("/"),
         email: `mailto:${site.email}`,
-        jobTitle: pickLocalized(locale, {
-          zh: "独立开发者",
-          en: "Independent developer",
-        }),
+        jobTitle: pickLocalized(locale, jobTitle),
         sameAs: [
           site.social.github,
           site.social.twitter,
@@ -67,24 +83,9 @@ export function personJsonLd(locale: Locale) {
     name: site.name,
     url: siteUrl("/"),
     email: `mailto:${site.email}`,
-    jobTitle: pickLocalized(locale, {
-      zh: "独立开发者",
-      en: "Independent developer",
-    }),
-    description: pickLocalized(locale, {
-      zh: "为日常工具注入克制的美感与深思熟虑的交互。",
-      en: "Bringing restrained aesthetics and considered interaction to everyday tools.",
-    }),
-    knowsAbout: [
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Kotlin",
-      "Jetpack Compose",
-      "Swift",
-      "Figma",
-      "Typography",
-    ],
+    jobTitle: pickLocalized(locale, jobTitle),
+    description: pickLocalized(locale, about.subtitle),
+    knowsAbout,
     sameAs: [
       site.social.github,
       site.social.twitter,

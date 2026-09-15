@@ -8,7 +8,7 @@ export const site: SiteMeta = {
     zh: "作品 · 思想 · 制作过程",
     en: "Works · Thoughts · Process",
   },
-  email: "hello@example.com",
+  email: "a2794343661@163.com",
   social: {
     github: "https://github.com/yourname",
   },
