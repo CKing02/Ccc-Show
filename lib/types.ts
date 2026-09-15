@@ -21,6 +21,13 @@ export interface Link {
   url: string;
 }
 
+/**
+ * 封面/配图展示策略：
+ *   - "cover"    填满容器并裁切（默认，适合横向设计稿/桌面截图）
+ *   - "contain"  完整显示图片，限高不裁切（适合手机竖屏截图，0.45 比例）
+ */
+export type ImageFit = "cover" | "contain";
+
 export interface ProjectMeta {
   title: Localized<string>;
   slug: string;
@@ -30,6 +37,8 @@ export interface ProjectMeta {
   status: ProjectStatus;
   featured: boolean;
   cover: string;
+  /** 封面图展示策略，默认 "cover" */
+  coverFit?: ImageFit;
   gallery: string[];
   summary: Localized<string>;
   tech: string[];

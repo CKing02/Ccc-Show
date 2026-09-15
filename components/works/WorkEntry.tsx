@@ -21,7 +21,11 @@ export function WorkEntry({ project, reversed, locale }: WorkEntryProps) {
           reversed ? "lg:col-start-6 lg:order-2" : "lg:col-start-1 lg:order-1"
         }`}
       >
-        <WorkCover src={project.cover} alt={project.title[locale]} />
+        <WorkCover
+          src={project.cover}
+          alt={project.title[locale]}
+          fit={project.coverFit ?? "cover"}
+        />
       </Link>
       <div
         className={`self-center lg:col-span-4 ${
