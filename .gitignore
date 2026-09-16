@@ -27,11 +27,6 @@ pnpm-debug.log*
 # vercel
 .vercel
 
-# opennext / cloudflare
-.open-next/
-.wrangler/
-.dev.vars
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
@@ -40,3 +35,8 @@ next-env.d.ts
 .vscode/
 .idea/
 *.swp
+
+# opennext / cloudflare (leftover from previous Cloudflare experiment)
+.open-next/
+.wrangler/
+.dev.vars

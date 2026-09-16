@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
   images: {
-    unoptimized: true, // Cloudflare Workers 上没有 /_next/image 端点,直接用原图
     formats: ["image/avif", "image/webp"],
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
