@@ -54,7 +54,7 @@ function GalleryItem({
         onClick={onClick}
         className={
           orientation === "vertical"
-            ? "max-h-[800px] w-auto max-w-full cursor-zoom-in"
+            ? "max-h-[800px] lg:max-h-[960px] w-auto max-w-full cursor-zoom-in"
             : "max-w-full h-auto cursor-zoom-in"
         }
       />

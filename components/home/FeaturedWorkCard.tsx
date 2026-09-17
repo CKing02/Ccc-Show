@@ -42,9 +42,9 @@ export function FeaturedWorkCard({ project, locale, delay }: FeaturedWorkCardPro
                 alt={title}
                 width={1200}
                 height={2800}
-                sizes="(min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1280px) 50vw, (min-width: 768px) 50vw, 100vw"
                 onError={() => setFailed(true)}
-                className="max-h-[560px] w-auto max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="max-h-[560px] md:max-h-[600px] lg:max-h-[720px] xl:max-h-[840px] w-auto max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
             </div>
           ) : (
@@ -53,7 +53,7 @@ export function FeaturedWorkCard({ project, locale, delay }: FeaturedWorkCardPro
                 src={project.cover}
                 alt={title}
                 fill
-                sizes="(min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1280px) 50vw, (min-width: 768px) 50vw, 100vw"
                 onError={() => setFailed(true)}
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
