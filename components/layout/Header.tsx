@@ -16,7 +16,7 @@ export function Header({ locale }: HeaderProps) {
 
   return (
     <header className="border-b border-ink-faint">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-12">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-12 lg:px-16 lg:py-7">
         <Link href="/" className="flex items-baseline gap-3">
           <span className="font-serif text-2xl tracking-tight">{primary}</span>
           <span className="hidden text-xs uppercase tracking-[0.2em] text-ink-muted md:inline">
