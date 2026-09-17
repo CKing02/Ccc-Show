@@ -50,7 +50,7 @@ function NavItem({
   className?: string;
 }) {
   if (!project) {
-    return <div className={clsx("px-6 py-12 md:px-12", className)} />;
+    return <div className={clsx("px-6 py-12 md:px-12 lg:px-16", className)} />;
   }
 
   const isPrev = direction === "prev";
@@ -60,7 +60,7 @@ function NavItem({
     <Link
       href={`/works/${project.slug}`}
       className={clsx(
-        "group block px-6 py-12 transition-colors hover:bg-bg-paper md:px-12",
+        "group block px-6 py-12 transition-colors hover:bg-bg-paper md:px-12 lg:px-16",
         className,
       )}
     >
@@ -75,7 +75,7 @@ function NavItem({
       </div>
       <div
         className={clsx(
-          "mt-4 font-serif text-2xl md:text-3xl",
+          "mt-4 font-serif text-2xl md:text-3xl lg:text-4xl",
           isPrev ? "" : "text-right",
         )}
       >

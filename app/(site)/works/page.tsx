@@ -22,9 +22,9 @@ export default async function WorksPage({ searchParams }: WorksPageProps) {
   return (
     <div>
       <header className="border-b border-ink-faint">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-20 lg:px-12 lg:py-24">
           <Label>{t(locale, "works_title_en")}</Label>
-          <h1 className="mt-6 font-serif text-5xl leading-tight md:text-7xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight md:text-6xl lg:text-7xl xl:text-8xl">
             {t(locale, "works_title")}
           </h1>
           <p className="mt-6 text-ink-muted">

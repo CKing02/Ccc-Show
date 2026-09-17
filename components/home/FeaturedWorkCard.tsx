@@ -61,7 +61,7 @@ export function FeaturedWorkCard({ project, locale, delay }: FeaturedWorkCardPro
           )}
         </div>
         <div className="mt-6 flex items-baseline justify-between gap-4">
-          <h3 className="font-serif text-2xl md:text-3xl">{title}</h3>
+          <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl">{title}</h3>
           <Label className="shrink-0">{formatYear(project.date)}</Label>
         </div>
         <p className="mt-2 text-ink-muted">{pickLocalized(locale, project.summary)}</p>

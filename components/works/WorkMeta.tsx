@@ -22,7 +22,7 @@ export function WorkMeta({ project, locale }: WorkMetaProps) {
         <Label className="text-ink-faint">{formatYear(project.date)}</Label>
       </div>
 
-      <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl">
+      <h2 className="mt-6 font-serif text-3xl leading-tight md:text-4xl lg:text-5xl">
         {pickLocalized(locale, project.title)}
       </h2>
 

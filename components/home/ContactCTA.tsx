@@ -11,12 +11,12 @@ interface ContactCTAProps {
 export function ContactCTA({ locale }: ContactCTAProps) {
   return (
     <section className="border-t border-ink-faint">
-      <div className="mx-auto max-w-7xl px-6 py-24 md:px-12 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28 lg:px-12 lg:py-36">
         <Reveal>
           <Label>{t(locale, "home_contact_label")}</Label>
         </Reveal>
         <Reveal delay={80}>
-          <h2 className="mt-8 font-serif text-4xl leading-tight md:text-6xl">
+          <h2 className="mt-8 font-serif text-4xl leading-tight md:text-5xl lg:text-6xl">
             {locale === "en" ? "Get in touch?" : "想聊聊？"}
           </h2>
         </Reveal>

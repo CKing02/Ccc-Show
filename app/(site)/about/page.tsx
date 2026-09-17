@@ -26,17 +26,17 @@ export default async function AboutPage() {
       <JsonLd data={personJsonLd(locale)} />
       {/* ── Section 01: Hero ─────────────────────────────────── */}
       <header className="border-b border-ink-faint">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-20 lg:px-12 lg:py-24">
           <Reveal>
             <Label>{pickLocalized(locale, about.kicker)}</Label>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-8 font-serif text-6xl leading-[1.05] tracking-tight md:text-9xl">
+            <h1 className="mt-8 font-serif text-5xl leading-[1.05] tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">
               {t(locale, "about_title")}
             </h1>
           </Reveal>
           <Reveal delay={160}>
-            <p className="mt-12 max-w-3xl font-serif text-xl leading-relaxed text-ink-muted md:text-3xl">
+            <p className="mt-12 max-w-3xl font-serif text-xl leading-relaxed text-ink-muted md:text-2xl lg:text-3xl">
               {pickLocalized(locale, about.subtitle)}
             </p>
           </Reveal>
@@ -46,7 +46,7 @@ export default async function AboutPage() {
       {/* ── Section 02: Skills ───────────────────────────────── */}
       <SectionRule index={2} total={TOTAL_SECTIONS} label={skillsLabel} />
       <section>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-12 md:px-12 md:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-12 md:px-10 md:py-20 lg:px-12 lg:py-24">
           <div className="md:col-span-3">
             <Reveal>
               <Label>{skillsLabel}</Label>
@@ -74,7 +74,7 @@ export default async function AboutPage() {
       {/* ── Section 03: Timeline ─────────────────────────────── */}
       <SectionRule index={3} total={TOTAL_SECTIONS} label={timelineLabel} />
       <section>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-12 md:px-12 md:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 md:grid-cols-12 md:px-10 md:py-20 lg:px-12 lg:py-24">
           <div className="md:col-span-3">
             <Reveal>
               <Label>{timelineLabel}</Label>
@@ -106,12 +106,12 @@ export default async function AboutPage() {
 
       {/* ── Footer note ──────────────────────────────────────── */}
       <section className="border-t border-ink-faint">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-20 lg:px-12 lg:py-24">
           <Reveal>
             <Label>{t(locale, "home_contact_label")}</Label>
           </Reveal>
           <Reveal delay={80}>
-            <p className="mt-8 font-serif text-2xl leading-relaxed md:text-3xl">
+            <p className="mt-8 font-serif text-2xl leading-relaxed md:text-3xl lg:text-4xl">
               {locale === "en"
                 ? "Always happy to hear from you — collaboration, questions, or just a hello."
                 : "欢迎来信——合作、提问、或者只是想打个招呼都可以。"}

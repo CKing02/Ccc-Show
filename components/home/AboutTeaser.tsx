@@ -12,7 +12,7 @@ interface AboutTeaserProps {
 export function AboutTeaser({ locale }: AboutTeaserProps) {
   return (
     <section className="border-t border-ink-faint">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-24 md:grid-cols-12 md:px-12 md:py-32">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12 md:px-10 md:py-28 lg:px-12 lg:py-36">
         <div className="md:col-span-4">
           <Reveal>
             <Label>{t(locale, "home_about_label")}</Label>
@@ -20,7 +20,7 @@ export function AboutTeaser({ locale }: AboutTeaserProps) {
         </div>
         <div className="md:col-span-8">
           <Reveal delay={80}>
-            <p className="font-serif text-2xl leading-relaxed md:text-3xl">
+            <p className="font-serif text-2xl leading-relaxed md:text-3xl lg:text-4xl">
               {locale === "en" ? (
                 <>
                   Product Manager focused on AI productization — currently shipping

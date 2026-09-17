@@ -14,9 +14,9 @@ interface CommentPlaceholderProps {
 export function CommentPlaceholder({ locale }: CommentPlaceholderProps) {
   return (
     <section className="border-t border-ink-faint">
-      <div className="mx-auto max-w-3xl px-6 py-24 md:px-12 md:py-32">
+      <div className="mx-auto max-w-3xl px-6 py-20 md:px-10 md:py-28 lg:px-12 lg:py-36">
         <Label>{t(locale, "project_comments")}</Label>
-        <p className="mt-8 font-serif text-2xl leading-relaxed text-ink-muted md:text-3xl">
+        <p className="mt-8 font-serif text-2xl leading-relaxed text-ink-muted md:text-3xl lg:text-4xl">
           {t(locale, "project_comments_placeholder")}
         </p>
         <p className="mt-6 text-ink-muted">

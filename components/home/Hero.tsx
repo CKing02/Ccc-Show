@@ -9,12 +9,12 @@ interface HeroProps {
 
 export function Hero({ locale }: HeroProps) {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-24 pt-24 md:px-12 md:pb-32 md:pt-40">
+    <section className="mx-auto max-w-7xl px-6 pb-20 pt-20 md:px-10 md:pb-28 md:pt-32 lg:px-12 lg:pb-36 lg:pt-40">
       <Reveal>
         <Label>Portfolio · {new Date().getFullYear()}</Label>
       </Reveal>
       <Reveal delay={80}>
-        <h1 className="mt-8 font-serif text-6xl leading-[1.05] tracking-tight md:text-9xl">
+        <h1 className="mt-8 font-serif text-5xl leading-[1.05] tracking-tight md:text-7xl lg:text-8xl xl:text-9xl">
           {locale === "en" ? "Portfolio" : "展示台"}
         </h1>
       </Reveal>

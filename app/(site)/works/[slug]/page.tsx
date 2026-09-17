@@ -80,14 +80,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Header */}
       <header className="border-b border-ink-faint">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-20 lg:px-12 lg:py-24">
           <div className="flex flex-wrap items-baseline gap-4">
             <Label>
               {project.platform.map((p) => p.toUpperCase()).join(" · ")}
             </Label>
             <Label className="text-ink-faint">{formatYear(project.date)}</Label>
           </div>
-          <h1 className="mt-8 font-serif text-5xl leading-tight md:text-7xl">
+          <h1 className="mt-8 font-serif text-4xl leading-tight md:text-6xl lg:text-7xl xl:text-8xl">
             {pickLocalized(locale, project.title)}
           </h1>
           <p className="mt-8 max-w-2xl font-serif text-xl leading-relaxed text-ink-muted md:text-2xl">
@@ -98,7 +98,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Meta grid */}
       <section className="border-b border-ink-faint">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-12 md:grid-cols-4 md:px-12">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-12 md:grid-cols-4 md:px-10 lg:px-12">
           <div>
             <Label>{t(locale, "project_role")}</Label>
             <p className="mt-2 font-serif">{pickLocalized(locale, project.role)}</p>
@@ -118,7 +118,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Body */}
       <section>
-        <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 md:py-20 lg:px-12 lg:py-24">
           <Prose>
             <div dangerouslySetInnerHTML={{ __html: project.html }} />
           </Prose>
@@ -128,7 +128,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {/* Gallery */}
       {project.gallery.length > 0 && (
         <section className="border-t border-ink-faint">
-          <div className="mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-24">
+          <div className="mx-auto max-w-5xl px-6 py-16 md:px-10 md:py-20 lg:px-12 lg:py-24">
             <Label>{t(locale, "project_gallery")}</Label>
             <div className="mt-12">
               <Gallery
@@ -143,7 +143,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {/* Downloads */}
       {project.downloads && project.downloads.length > 0 && (
         <section className="border-t border-ink-faint">
-          <div className="mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-24">
+          <div className="mx-auto max-w-5xl px-6 py-16 md:px-10 md:py-20 lg:px-12 lg:py-24">
             <DownloadList downloads={project.downloads} locale={locale} />
           </div>
         </section>
