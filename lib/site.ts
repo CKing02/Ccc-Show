@@ -10,7 +10,7 @@ export const site: SiteMeta = {
   },
   email: "a2794343661@163.com",
   social: {
-    github: "https://github.com/yourname",
+    github: "https://github.com/CKing02",
   },
 };
 
