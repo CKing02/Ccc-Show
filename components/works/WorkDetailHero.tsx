@@ -25,7 +25,7 @@ export function WorkDetailHero({ project, locale }: WorkDetailHeroProps) {
   if (failed) {
     return (
       <div
-        className="flex aspect-[16/9] w-full items-center justify-center bg-bg-paper text-sm uppercase tracking-[0.2em] text-ink-faint"
+        className="flex aspect-[16/9] w-full max-h-[80vh] md:max-h-[82vh] lg:max-h-[85vh] items-center justify-center bg-bg-paper text-sm uppercase tracking-[0.2em] text-ink-faint"
         role="img"
         aria-label={title}
       >
@@ -46,11 +46,11 @@ export function WorkDetailHero({ project, locale }: WorkDetailHeroProps) {
             sizes="100vw"
             priority
             onError={() => setFailed(true)}
-            className="max-h-[80vh] w-auto max-w-full object-contain"
+            className="max-h-[80vh] md:max-h-[82vh] lg:max-h-[88vh] xl:max-h-[92vh] w-auto max-w-full object-contain"
           />
         </div>
       ) : (
-        <div className="relative aspect-[16/9] w-full max-h-[80vh]">
+        <div className="relative aspect-[16/9] w-full max-h-[80vh] md:max-h-[82vh] lg:max-h-[85vh]">
           <Image
             src={project.cover}
             alt={title}

@@ -14,11 +14,13 @@ interface WorkEntryProps {
  */
 export function WorkEntry({ project, reversed, locale }: WorkEntryProps) {
   return (
-    <article className="group grid grid-cols-1 gap-8 py-12 lg:grid-cols-12 lg:gap-x-12 lg:py-20">
+    <article className="group grid grid-cols-1 gap-8 py-12 md:grid-cols-2 md:gap-x-8 md:py-16 lg:grid-cols-12 lg:gap-x-12 lg:py-20">
       <Link
         href={`/works/${project.slug}`}
         className={`block lg:col-span-7 ${
-          reversed ? "lg:col-start-6 lg:order-2" : "lg:col-start-1 lg:order-1"
+          reversed
+            ? "md:order-2 lg:col-start-6"
+            : "md:order-1 lg:col-start-1"
         }`}
       >
         <WorkCover
@@ -30,8 +32,8 @@ export function WorkEntry({ project, reversed, locale }: WorkEntryProps) {
       <div
         className={`self-center lg:col-span-4 ${
           reversed
-            ? "lg:col-start-1 lg:order-1"
-            : "lg:col-start-9 lg:order-2"
+            ? "md:order-1 lg:col-start-1"
+            : "md:order-2 lg:col-start-9"
         }`}
       >
         <WorkMeta project={project} locale={locale} />

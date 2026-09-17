@@ -48,10 +48,10 @@ export function WorkCover({ src, alt, priority = false, fit = "cover" }: WorkCov
             alt={alt}
             width={1200}
             height={2800}
-            sizes="(min-width: 1024px) 60vw, 100vw"
+            sizes="(min-width: 1280px) 60vw, (min-width: 1024px) 60vw, 100vw"
             priority={priority}
             onError={() => setFailed(true)}
-            className="max-h-[640px] w-auto max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="max-h-[640px] md:max-h-[720px] lg:max-h-[800px] xl:max-h-[960px] w-auto max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           />
         </div>
       ) : (
@@ -60,7 +60,7 @@ export function WorkCover({ src, alt, priority = false, fit = "cover" }: WorkCov
             src={src}
             alt={alt}
             fill
-            sizes="(min-width: 1024px) 60vw, 100vw"
+            sizes="(min-width: 1280px) 60vw, (min-width: 1024px) 60vw, 100vw"
             priority={priority}
             onError={() => setFailed(true)}
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
