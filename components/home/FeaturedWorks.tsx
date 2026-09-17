@@ -16,7 +16,7 @@ export async function FeaturedWorks({ locale }: FeaturedWorksProps) {
 
   return (
     <section className="border-t border-ink-faint">
-      <div className="mx-auto max-w-7xl px-6 py-24 md:px-12 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28 lg:px-12 lg:py-36">
         <Reveal>
           <div className="flex items-baseline justify-between">
             <Label>{t(locale, "home_featured_label")}</Label>
@@ -28,7 +28,7 @@ export async function FeaturedWorks({ locale }: FeaturedWorksProps) {
             </Link>
           </div>
         </Reveal>
-        <div className="mt-16 grid grid-cols-1 gap-16 md:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-x-16 md:gap-y-16 lg:gap-x-16 lg:gap-y-20">
           {projects.map((p, i) => (
             <FeaturedWorkCard
               key={p.slug}
